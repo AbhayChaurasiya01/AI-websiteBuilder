@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
     },
     emailVerified: {
         type: Boolean,
-        default: ture
+        default: true
     }
 },{
     timestamps: true
@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema({
 // to return a safe user obj (no paswwrod) to sent to frontend.
 userSchema.methods.toClient =  function(){
     return{
-        id: this._id.tostring(),
+        id: this._id.toString(),
         name: this.name,
         email: this.email,
         credits: this.credits,
